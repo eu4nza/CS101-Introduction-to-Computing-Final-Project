@@ -1,0 +1,45 @@
+@import url('https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-sans/style.css');
+
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #9ca3af;
+    --text-color: #ffffff;
+    --bg-color: #000000;
+    --light-bg: #18181b;
+}
+
+body {
+    font-family: 'Geist Sans', sans-serif;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+.navbar-shadow {
+    box-shadow: 0 1px 2px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #18181b;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+}
+
+/* AOS Customization */
+[data-aos] {
+    pointer-events: none;
+}
+[data-aos].aos-animate {
+    pointer-events: auto;
+}
