@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="icon" href="../assets/images/favicon.svg">
+
+    <!-- FONT & COLOR PALETTE -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#ffffff',
+                        'secondary': '#9ca3af',
+                        'light-bg': '#18181b',
+                        'dark-text': '#ffffff',
+                    },
+                    fontFamily: {
+                        sans: ['Geist Sans', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="flex flex-col min-h-screen bg-black text-white">
+
+    <!-- NAVIGATION BAR -->
+    <header class="sticky top-0 z-50 bg-black/90 backdrop-blur-sm navbar-shadow transition-all duration-300 border-b border-gray-800">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <svg fill="currentColor" viewBox="0 0 324.41 221.04" class="h-8 w-auto text-white" width="32" height="32">
+                        <path d="M3.8,117.19c19.95,18.97,46.33,26.72,73.08,29.85,28.19,3.29,57.19,1.69,84.93-4.25,27.71-5.93,55.85-16.68,78.14-34.52s35.27-43.68,30.8-71.43c-2.42-15.01-11.17-28.02-25.48-33.76-14.28-5.72-29.48-2.74-43.12,3.24-23.66,10.37-44.42,28.31-60.94,47.94-17.75,21.08-35.19,46.34-41.71,73.48s.06,56.15,22.77,73.93c26.25,20.55,60.59,20.98,92.34,18.12,34.39-3.09,68.24-10.47,100.69-22.28,6.29-2.29,10.54-8.43,8.66-15.26-1.67-6.07-8.93-10.96-15.26-8.66-24.86,9.05-50.58,15.61-76.76,19.41-24.03,3.49-51.06,6.49-74.68-.64-18.26-5.51-34.1-19.09-35.41-39.67-1.5-23.58,11.39-45.18,24.17-63.99,12.05-17.74,26.81-34.37,44.33-46.87,8.97-6.4,18.91-12.83,29.61-15.81,8.39-2.34,17.86-2.09,22.89,5.4,5.32,7.92,4.86,18.61,2.52,27.21-2.68,9.89-8.32,18.48-15.66,25.67-16.22,15.89-38.94,25.02-60.45,31.09-27.2,7.68-55.59,9.84-83.73,7.68-22.63-1.74-47.18-7.23-64.21-23.41-11.57-11-29.14,6.51-17.54,17.54h0Z" />
+                    </svg>
+                    <a href="index.html" class="text-xl font-medium text-white tracking-tight">Euan Chua</a>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-white font-semibold border-b-2 border-white transition duration-300">Home</a>
+                    <a href="about.html" class="text-gray-400 hover:text-white transition duration-300">About</a>
+                    <a href="works.html" class="text-gray-400 hover:text-white transition duration-300">Works</a>
+                    <a href="experience.html" class="text-gray-400 hover:text-white transition duration-300">Experience</a>
+                    <a href="contact.html" class="text-gray-400 hover:text-white transition duration-300">Contact</a>
+                    <a href="testimonials.html" class="text-gray-400 hover:text-white transition duration-300">Testimonials</a>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="menu-button" class="text-gray-400 hover:text-white focus:outline-none p-2 transition duration-300">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <div id="mobile-menu" class="md:hidden absolute top-20 left-0 w-full bg-black border-t border-gray-800 shadow-lg z-40 transition-all duration-300 ease-in-out opacity-0 -translate-y-4 invisible">
+            <div class="px-4 pt-4 pb-6 space-y-2">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-black bg-white">Home</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-900 hover:text-white">About</a>
+                <a href="works.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-900 hover:text-white">Works</a>
+                <a href="experience.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-900 hover:text-white">Experience</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-900 hover:text-white">Contact</a>
+                <a href="testimonials.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-900 hover:text-white">Testimonials</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- HERO SECTION -->
+        <section class="relative bg-black overflow-hidden flex items-center justify-center min-h-[80vh]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="relative z-10 pb-8 bg-black sm:pb-16 md:pb-20 lg:w-full lg:pb-28 xl:pb-32">
+                    <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+                        <div class="sm:text-center" data-aos="fade-up">
+                            <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
+                                <span class="block xl:inline">Creative Portfolio</span>
+                                <span class="block text-gray-400">Euan Chua</span>
+                            </h1>
+                            <p class="mt-3 text-base text-gray-400 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl">
+                                I'm a Computer Science student passionate about building accessible, user-friendly, and performant web applications.
+                            </p>
+                            <div class="mt-5 sm:mt-8 sm:flex sm:justify-center">
+                                <div class="rounded-md shadow">
+                                    <a href="works.html" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-white hover:bg-gray-200 md:py-4 md:text-lg transition duration-300">
+                                        View Works
+                                    </a>
+                                </div>
+                                <div class="mt-3 sm:mt-0 sm:ml-3">
+                                    <a href="contact.html" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 md:py-4 md:text-lg transition duration-300">
+                                        Contact Me
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHAT DRIVES ME SECTION -->
+        <section class="py-16 bg-zinc-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center" data-aos="fade-up">
+                    <h2 class="text-base text-white font-semibold tracking-wide uppercase">Philosophy</h2>
+                    <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
+                        What Drives Me
+                    </p>
+                    <p class="mt-4 max-w-2xl text-xl text-gray-400 lg:mx-auto">
+                        The core principles that guide my work and life.
+                    </p>
+                </div>
+
+                <div class="mt-10">
+                    <div class="space-y-10 md:space-y-0 md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-10">
+                        
+                        <!-- Driver 1 -->
+                        <div class="relative bg-black p-6 rounded-lg shadow-sm border border-gray-800 hover:border-gray-600 transition-colors duration-300" data-aos="fade-up" data-aos-delay="100">
+                            <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-white text-black">
+                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </div>
+                            <p class="ml-16 text-lg leading-6 font-medium text-white">Passion</p>
+                            <p class="mt-2 ml-16 text-base text-gray-400">
+                                I am deeply passionate about technology and its potential to solve real-world problems. This passion drives me to constantly learn and improve.
+                            </p>
+                        </div>
+
+                        <!-- Driver 2 -->
+                        <div class="relative bg-black p-6 rounded-lg shadow-sm border border-gray-800 hover:border-gray-600 transition-colors duration-300" data-aos="fade-up" data-aos-delay="200">
+                            <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-white text-black">
+                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                                </svg>
+                            </div>
+                            <p class="ml-16 text-lg leading-6 font-medium text-white">Innovation</p>
+                            <p class="mt-2 ml-16 text-base text-gray-400">
+                                I strive to find creative and innovative solutions to challenges. I believe in thinking outside the box and pushing boundaries.
+                            </p>
+                        </div>
+
+                        <!-- Driver 3 -->
+                        <div class="relative bg-black p-6 rounded-lg shadow-sm border border-gray-800 hover:border-gray-600 transition-colors duration-300" data-aos="fade-up" data-aos-delay="300">
+                            <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-white text-black">
+                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                            </div>
+                            <p class="ml-16 text-lg leading-6 font-medium text-white">Collaboration</p>
+                            <p class="mt-2 ml-16 text-base text-gray-400">
+                                I value teamwork and collaboration. I believe that the best results are achieved when people work together towards a common goal.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-black border-t border-gray-800">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="flex space-x-6 md:order-2">
+                    <a href="https://github.com/eu4nza" class="text-gray-400 hover:text-gray-300">
+                        <span class="sr-only">GitHub</span>
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+                <p class="mt-4 text-sm text-gray-400 md:mt-0 md:order-1">
+                    Designed & Built by Euan Chua
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../assets/script.js"></script>
+</body>
+</html>
